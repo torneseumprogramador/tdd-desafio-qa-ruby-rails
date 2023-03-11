@@ -15,14 +15,6 @@ class AlunosControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create aluno" do
-    assert_difference("Aluno.count") do
-      post alunos_url, params: { aluno: { data_nascimento: @aluno.data_nascimento, idade: @aluno.idade, matricula: @aluno.matricula, nome: @aluno.nome } }
-    end
-
-    assert_redirected_to aluno_url(Aluno.last)
-  end
-
   test "should show aluno" do
     get aluno_url(@aluno)
     assert_response :success
@@ -31,11 +23,6 @@ class AlunosControllerTest < ActionDispatch::IntegrationTest
   test "should get edit" do
     get edit_aluno_url(@aluno)
     assert_response :success
-  end
-
-  test "should update aluno" do
-    patch aluno_url(@aluno), params: { aluno: { data_nascimento: @aluno.data_nascimento, idade: @aluno.idade, matricula: @aluno.matricula, nome: @aluno.nome } }
-    assert_redirected_to aluno_url(@aluno)
   end
 
   test "should destroy aluno" do

@@ -1,3 +1,5 @@
 class Aluno < ApplicationRecord
-    # validates :nome, presence: true
+    validates :nome, :matricula, presence: true
+    validates :matricula, uniqueness: true
 end
+  
